@@ -158,3 +158,43 @@ int main(){
   g->next=NULL;
   
   linkedlisttraveral(f);
+  f = insertionatfirst(f,89);//returns new first    //1
+  printf("\nAfter insertion at first position\n");
+  linkedlisttraversal(f);
+    
+  f = insertionatmid(f,12,2);    //2
+  printf("\nAfter insertion at middle\n");
+  linkedlisttraversal(f);
+    
+  f = insertionatend(f,100);    //3
+  printf("\nAfter insertion at end\n");
+  linkedlisttraversal(f);
+    
+  f = insertionafternode(f,t,10);    //4
+  printf("\nAfter insertion at some node\n");
+  linkedlisttraversal(f);
+    
+  f=searchnum(f,5,1);
+    
+  f = deletionatfirst(f);     //1
+//  f = deletionatfirst(f);  one more deletion
+  printf("\nAfter deletion at start, linked list is\n");
+  linkedlisttraversal(f);
+    
+  f=deletionatindex(f,2);    //2
+  printf("\nAfter deletion at mid,linked list is\n");
+  linkedlisttraversal(f);
+   
+  f = deletionatend(f);     //3
+  printf("\nAfter deletion at end, LL is\n");
+  linkedlisttraversal(f);
+    
+  f=deletionwithvalue(f,2);   //4
+  printf("\nAfter deletion with value given, LL is\n");
+  linkedlisttraversal(f);
+    
+  printf("Printing the reverse of Linked list:\n");
+  f=reverse(f);
+  linkedlisttraversal(f);
+return 0;
+}
