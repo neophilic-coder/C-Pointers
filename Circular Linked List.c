@@ -13,34 +13,34 @@ void main(){
       printf("\nEnter your choice:");
       scanf("%d",&choice);
       switch(choice){
-          case 1:
-          insertatfirst();
-          break;
-          case 2:
-          insertatend();
-          break;
-          case 3:
-          deleteatfirst();
-          break;
-          case 4:
-          deleteatend();
-          break;
-          case 5:
-          searchnum();
-          break; 
-          case 6:
-          display();
-          break;
-          case 7:
-          exit(0);
-          break;
-          default:
-          printf("Please enter valid choice.\n");
+        case 1:
+        insertatfirst();
+        break;
+        case 2:
+        insertatend();
+        break;
+        case 3:
+        deleteatfirst();
+        break;
+        case 4:
+        deleteatend();
+        break;
+        case 5:
+        searchnum();
+        break; 
+        case 6:
+        display();
+        break;
+        case 7:
+        exit(0);
+        break;
+        default:
+        printf("Please enter valid choice.\n");
       }
   }
 }
 
-
+//inserting an element at the beginning of circular linked list
 void insertatfirst(){
   struct node* temp,*ptr;
   temp=(struct node*)malloc(sizeof(struct node));
@@ -67,7 +67,7 @@ void insertatfirst(){
   }
 }
 
-
+//inserting an element at an end of circular linked list
 void insertatend(){
     struct node* temp,*ptr;
     temp=(struct node*)malloc(sizeof(struct node));
@@ -93,3 +93,28 @@ void insertatend(){
     printf("Node inserted\n");
     display();
 }
+
+//searching an element of circular linked list
+void display(){
+  struct node* ptr;
+  ptr=start;
+  if(start==NULL){
+    printf("Nothing to print\n");
+  }
+  /*while(ptr->next!=start){
+      printf("%d",ptr->info);
+      ptr=ptr->next;
+   }
+   printf("%d",ptr->info);*/
+   /*while(ptr!=start){
+       printf("%d",ptr->info);
+       ptr=ptr->next;
+   }*/
+   else{
+     do{
+       printf("%d\n",ptr->info);
+       ptr=ptr->next;
+     }while(ptr!=start);
+   }
+}
+
