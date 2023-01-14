@@ -118,3 +118,47 @@ void display(){
    }
 }
 
+//deleting an element at the start of circular linked list
+void deleteatfirst(){
+    struct node *ptr=start;
+    struct node *temp=start;
+    while(temp->next!=start){
+        temp=temp->next;
+    }
+    start=start->next;
+    temp->next=start;
+    ptr->next=NULL;
+    free(ptr);
+    printf("Node deleted\n");
+    display();
+}
+
+//deleting an element at the end of circular linked list
+void deleteatend(){
+    struct node *ptr=start;
+    struct node *temp=start;
+    while(temp->next!=start){
+        ptr=temp;
+        temp=temp->next;
+    }
+    ptr->next=start;
+    temp->next=NULL;
+    free(temp);
+    printf("Node at end deleted");
+    display();
+}
+
+//searching an element from circular linked list
+void searchnum(){
+    struct node* ptr=start;
+    int num;
+    printf("Enter the number you wish to search:");
+    scanf("%d",&num);
+    while(ptr->next!=start){
+        if(ptr->info==num){
+            printf("Search successful");
+            break;
+        }
+        ptr=ptr->next;
+    }
+}
