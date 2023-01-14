@@ -136,3 +136,74 @@ struct node* deletionatend(struct node* f){
     free(ptr);
     return f;
 }
+
+//linked list traversing
+void linkedlisttraversal(struct node *ptr){
+    int count=0;
+    printf("Elements are:\n");
+    while(ptr!=NULL)
+    {
+    printf("%d\n",ptr->info);
+    ptr=ptr->next;
+    count++;
+    }
+    printf("\nNumber of elements in the list are: %d\n",count);
+}
+int main(){
+    struct node *f,*s,*t,*g,*h;
+    f=(struct node*)malloc(sizeof(struct node));
+    s=(struct node*)malloc(sizeof(struct node));
+    t=(struct node*)malloc(sizeof(struct node));
+    g=(struct node*)malloc(sizeof(struct node));
+    h=(struct node*)malloc(sizeof(struct node));
+    
+    f->prev=NULL;
+    scanf("%d",&f->info);
+    f->next=s;
+    
+    s->prev=f;
+    scanf("%d",&s->info);
+    s->next=t;
+    
+    t->prev=s;
+    scanf("%d",&t->info);
+    t->next=g;
+    
+    g->prev=t;
+    scanf("%d",&g->info);
+    g->next=h;
+    
+    h->prev=g;
+    scanf("%d",&h->info);
+    h->next=NULL;
+    linkedlisttraversal(f);
+  /*  
+    f=insertionatstart(f,50);
+    printf("Doubly LL after insertion at beginning is\n");
+    linkedlisttraversal(f);
+    
+    f=insertionatmid(f,27,2);
+    printf("Doubly LL after insertion at index is\n");
+    linkedlisttraversal(f);
+   
+    f=insertionatend(f,45);
+    printf("Doubly LL after insertion at end is\n");
+    linkedlisttraversal(f);
+    
+    f=search(f,5,1);
+    f=reverse(f);
+    printf("After reversing the list:\n");
+    linkedlisttraversal(f);  */
+    
+    f=deletionatfirst(f);
+    printf("After deletion in the beginning, ll is:\n");
+    linkedlisttraversal(f);
+    
+    f=deletionatmid(f,2);
+    printf("After deletion at middle linked list is:\n");
+    linkedlisttraversal(f);
+    
+    f=deletionatend(f);
+    printf("After deletion at end linked list is:\n");
+    linkedlisttraversal(f);
+}
