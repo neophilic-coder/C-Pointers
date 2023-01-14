@@ -93,3 +93,38 @@ void insertatend(){
         temp->prev=ptr;
     }
 }
+
+//deleting an element at beginning
+void deleteatfirst(){
+    struct node *ptr=start;
+    if(ptr==NULL){
+        printf("Nothing to delete");
+    }
+    else{
+        
+    }
+}
+
+//displaying all the elements of linked list
+void display(){
+    struct node* ptr;
+     ptr=start;
+    if(start==NULL){
+        printf("Nothing to print\n");
+    }
+    /*while(ptr->next!=start){
+        printf("%d",ptr->info);
+        ptr=ptr->next;
+    }
+    printf("%d",ptr->info);*/
+    /*while(ptr!=start){
+        printf("%d",ptr->info);
+        ptr=ptr->next;
+    }*/
+    else{
+        do{
+            printf("%d\n",ptr->info);
+            ptr=ptr->next;
+        }while(ptr!=start);
+    }
+}
